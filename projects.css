@@ -1,0 +1,78 @@
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.project {
+    background-color: rgba(112,128, 144, 0.067);
+    box-shadow: rgba(0,0,0,0.1 6) 0px 1px 4px;
+    border-radius: 5px;
+    padding: 5px;
+    cursor:pointer;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.project h3 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #48494b;
+    margin-bottom: 3px;
+}
+
+.project p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: #48494b;
+}
+
+.project-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(5,73,5);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.project:hover .project-button {
+    display: block;
+    cursor: pointer;
+}
+.project-hover-bg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255,255,255, 0.278);
+    top: 0;
+}
+
+.project:hover .project-hover-bg{
+    display: block;
+
+}
+
+.project-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project img {
+    width: 100%;
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+   .projects-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+   }
+}
