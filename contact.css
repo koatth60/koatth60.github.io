@@ -1,0 +1,104 @@
+.contact {
+    padding-top: 5rem;
+    width: 100%;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-info h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.contact-info h3 {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    color: #6b7280;
+    font-weight: 400;
+    line-height: 2.25rem;
+}
+
+.contact-info h4 {
+    color: #48494b;
+    font-weight: 700;
+}
+
+.contact-socials {
+    margin-top: 3rem;
+}
+
+.contact-social-links {
+    display: flex;
+    gap: 10px;
+}
+
+form {
+    width: 100%;
+    
+}
+
+form input,textarea {
+    width: 100%;
+    color: gray;
+    border: 1px solid rgb(211, 211, 211);
+    outline: rgb(5,73,5);
+    border-radius: 0.25rem;
+    line-height: 1.25rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+form button {
+    background-color: rgb(5,73,5);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgba(5, 73, 5, 0.697);
+}
+
+@media only screen and (max-width: 768px) {
+   
+        .contact-container {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+    }
+
+.btt-button {
+    display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 3rem;
+    cursor: pointer;
+   
+}
+
+.show-btt-button {
+    display: block;
+}
+
+/* FOOTER STYLES */
+
+.footer-container {
+    text-align: center;
+    padding: 15px 0;
+}

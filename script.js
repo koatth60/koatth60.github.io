@@ -12,13 +12,31 @@ hamburger.addEventListener('click', () => {
 
 //STICKY NAV
 const nav = document.querySelector('nav');
-
+const bttButton = document.querySelector('.btt-button');
 const handleScroll = () => {
     if(window.scrollY > 0) {
         nav.classList.add('sticky-nav')
+        bttButton.classList.add('show-btt-button')
     } else {
         nav.classList.remove('sticky-nav')
+        bttButton.classList.remove('show-btt-button')
     }
 }
 window.addEventListener('scroll', handleScroll)
 
+// ACTIVE LINKS 
+
+const navLinks = document.querySelectorAll('.nav-menu li a')
+
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', function (event) {
+        navLinks.forEach((link) => {
+            link.parentElement.classList.remove('active');
+        });
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        body.classList.remove('no-scroll');
+        this.parentElement.classList.add('active');
+    });
+});

@@ -100,6 +100,12 @@ nav {
   overflow: hidden;
 }
 
+.nav-menu li.active{
+  border: 2px solid rgb(5, 73, 5);
+
+}
+
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 768px) {
