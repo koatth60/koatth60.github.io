@@ -40,3 +40,20 @@ navLinks.forEach((link) => {
         this.parentElement.classList.add('active');
     });
 });
+
+// ANIMATIONS 
+const animateElements = gsap.utils.toArray('.animate')
+const animateImage = gsap.utils.toArray('.animateImage')
+gsap.from(animateElements, {
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    stagger:0.2,
+});
+
+gsap.from(animateImage, {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    stagger:0.2,
+})

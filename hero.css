@@ -41,7 +41,7 @@
     gap: 10px;
 }
 
-.hero-btn-container button:nth-child(1) {
+.hero-btn-container a:nth-child(1) {
     background-color: rgb(5, 73, 5);
     color: white;
     border: none;
@@ -50,10 +50,10 @@
     cursor:pointer;
     transition: all 0.3s ease-in-out;
 }
-.hero-btn-container button:nth-child(1):hover {
+.hero-btn-container a:nth-child(1):hover {
     background-color: rgba(5, 73, 5, 0.697);
 }
-.hero-btn-container button:nth-child(2) {
+.hero-btn-container a:nth-child(2) {
     background-color: transparent;
     padding: 8px 15px;
     border-radius: 5px;
@@ -61,7 +61,7 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.hero-btn-container button:nth-child(2):hover {
+.hero-btn-container a:nth-child(2):hover {
     background-color: rgba(5, 73, 5, 0.697);
     color: white;
 }
