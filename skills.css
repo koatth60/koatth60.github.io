@@ -22,7 +22,7 @@
 
 .skill-boxes {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     grid-row: repeat(2);
     gap: 30px;
     text-align: center;
@@ -34,7 +34,17 @@
 .skill-box {
     box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 4px;
     padding: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ;
 }
+.skill-box:hover {
+    transform: scale(1.08);
+}
+.skill-box ion-icon {
+    font-size: 3rem;
+    
+}
+
 .skill-box h3 {
     font-weight: 400;
     color: #6b7280;
