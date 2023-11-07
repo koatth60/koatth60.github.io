@@ -57,3 +57,6 @@ gsap.from(animateImage, {
     duration: 1,
     stagger:0.2,
 })
+
+
+

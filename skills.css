@@ -1,7 +1,7 @@
 .skills {
     padding: 3rem 0;
 }
-.skill-heading h2 {
+.skill-heading h2, .works {
     font-size: 2rem;
     line-height: 1;
     color: #6b7280;
@@ -60,7 +60,7 @@
 
 @media only screen and (max-width: 768px) {
     .skill-boxes {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
