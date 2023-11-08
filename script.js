@@ -59,4 +59,15 @@ gsap.from(animateImage, {
 })
 
 
+// REMOVING THE HASH SYMBOL 
 
+function handleLinkClick(event) {
+    event.preventDefault(); 
+    const href = event.target.getAttribute("href"); 
+    history.pushState(null, "", href);
+  }
+
+  const links = document.querySelectorAll("a");
+  links.forEach((link) => {
+    link.addEventListener("click", handleLinkClick);
+  });
