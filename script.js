@@ -59,4 +59,35 @@ gsap.from(animateImage, {
 })
 
 
-
+// Modal functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("project-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const modalLink = document.getElementById("modal-link");
+    const closeBtn = document.querySelector(".close-btn");
+  
+   
+    document.querySelectorAll(".project-button").forEach(button => {
+      button.addEventListener("click", () => {
+        // Populate modal with project details from data attributes
+        modalTitle.textContent = button.getAttribute("data-project");
+        modalDescription.textContent = button.getAttribute("data-description");
+        modalLink.href = button.getAttribute("data-link");
+  
+        // Show modal
+        modal.style.display = "block";
+      });
+    });
+   
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+ 
+    window.addEventListener("click", event => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+  

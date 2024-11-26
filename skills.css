@@ -27,6 +27,7 @@
     gap: 30px;
     text-align: center;
     margin-top: 60px;
+    padding-bottom: 2px;
 }
 
 
@@ -56,12 +57,48 @@
     font-weight: 400;
     color: #48494b;
 }
+.scrolling-container {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
 
+.skill-boxes {
+    display: inline-flex;
+    animation: scroll-left 40s linear infinite;
+    animation-play-state: running;
+}
 
+.skill-boxes:hover {
+    animation-play-state: paused; 
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.skill-box {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.skill-box:hover {
+    transform: scale(1.08); 
+}
+
+/* Responsive adjustments */
 @media only screen and (max-width: 768px) {
     .skill-boxes {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
 
 
