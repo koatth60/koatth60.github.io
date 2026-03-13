@@ -19,7 +19,7 @@
 
 .contact-info p {
     font-size: 1rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
     color: #6b7280;
 }
@@ -65,6 +65,7 @@ form input,textarea {
 
 form button {
     background-color: rgb(5,73,5);
+    color: white;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;

@@ -24,13 +24,23 @@ const handleScroll = () => {
 }
 window.addEventListener('scroll', handleScroll)
 
-// ACTIVE LINKS 
+// ACTIVE LINKS + CLEAN URL SCROLL
 
 const navLinks = document.querySelectorAll('.nav-menu li a')
 
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', function (event) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', window.location.pathname);
+    });
+});
 
 navLinks.forEach((link) => {
-    link.addEventListener('click', function (event) {
+    link.addEventListener('click', function () {
         navLinks.forEach((link) => {
             link.parentElement.classList.remove('active');
         });
