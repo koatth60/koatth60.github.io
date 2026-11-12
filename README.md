@@ -15,10 +15,10 @@ Personal portfolio of Carlos Mendoza, a full-stack developer in Bogotá, Colombi
 
 **Web platforms**
 
-- **[Lingolandias Academy](https://lingolandias.com)** — Language-learning platform with 500+ active users, built and run solo (React, NestJS, PostgreSQL, Socket.IO, Jitsi, S3, Docker).
+- **[Lingolandias Academy](https://lingolandias.com)** — Language-learning platform with 200+ active users, built and run solo: live classes on LiveKit, a built-in LMS, real-time chat and a desktop app (React, NestJS, PostgreSQL, Socket.IO, LiveKit, Electron, Docker).
 - **[Grillr](https://grillr-seven.vercel.app)** — AI mock-interview SaaS (Next.js, NestJS, Prisma, Claude API, Stripe).
 - **[Lingolandias Website](https://lingolandias.net)** — Multi-language marketing site with a level quiz (React, i18next, Express).
-- **Handy Pro** — Services marketplace built by a team of 6. My part was the backend: real-time chat, Stripe payments and the data preload (NestJS, TypeORM, Socket.IO).
+- **[Zaqi Solutions](https://zaqisolutions.com)** — The software studio I founded. It sells Onix, voice agents, websites and custom software.
 
 ---
 
@@ -54,7 +54,7 @@ python -m http.server 5173
 
 - Email: koatth60@gmail.com
 - GitHub: [github.com/koatth60](https://github.com/koatth60)
-- LinkedIn: [carlos-mendoza-060097225](https://www.linkedin.com/in/carlos-mendoza-060097225/)
+- LinkedIn: [carlos-mendoza-8299663b7](https://www.linkedin.com/in/carlos-mendoza-8299663b7/)
 
 ---
 

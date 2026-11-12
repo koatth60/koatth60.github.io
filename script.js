@@ -1,5 +1,3 @@
-document.documentElement.classList.add("js");
-
 // ===== Mobile menu =====
 const menu = document.getElementById("nav-menu");
 const burger = document.querySelector(".hamburger");
@@ -42,19 +40,5 @@ const setActive = () => {
 };
 window.addEventListener("scroll", setActive, { passive: true });
 setActive();
-
-// ===== Reveal on scroll =====
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.08 }
-);
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
 document.getElementById("year").textContent = new Date().getFullYear();
