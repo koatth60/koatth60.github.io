@@ -3,361 +3,424 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="hero.css" />
-    <link rel="stylesheet" href="skills.css" />
-    <link rel="stylesheet" href="projects.css" />
-    <link rel="stylesheet" href="contact.css" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="script.js" defer></script>
+    <title>Carlos Mendoza — Full-Stack &amp; AI Agents Developer</title>
+    <meta
+      name="description"
+      content="Carlos Mendoza — full-stack developer in Bogotá building production web platforms and AI agents: a WhatsApp sales agent (LangGraph, pgvector) and a real-time voice agent (Pipecat, Deepgram, Claude)."
+    />
+    <meta property="og:title" content="Carlos Mendoza — Full-Stack & AI Agents Developer" />
+    <meta
+      property="og:description"
+      content="Production web platforms and AI agents: WhatsApp sales agent, real-time voice agent, a language-learning platform with 500+ active users."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://koatth60.github.io/" />
+    <meta property="og:image" content="https://koatth60.github.io/assets/lingo-com.PNG" />
+    <meta name="theme-color" content="#0b1210" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310b981'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' text-anchor='middle' fill='%230b1210'%3ECM%3C/text%3E%3C/svg%3E" />
 
-    <title>Carlos Mendoza — Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Apply saved theme before paint to avoid a flash.
+      try {
+        const t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="container navbar">
-          <a href="./" aria-label="Home">
-            <h1>Carlos <span>Mendoza.</span></h1>
-          </a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-          <ul class="nav-menu">
-            <li>
-              <a href="#about" aria-label="About me">About me</a>
-            </li>
-            <li>
-              <a href="#projects" aria-label="Projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact" aria-label="Contacts">Contacts</a>
-            </li>
-            <a href="/resume.pdf" download aria-label="Download Resume" class="navbar-button">Download Resume</a>
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main">
+        <a href="#top" class="logo" aria-label="Carlos Mendoza — home">Carlos <span>Mendoza.</span></a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#ai">AI Agents</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="resume.pdf" download class="btn btn-small">Resume</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Toggle color theme">
+            <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+          <button class="icon-btn hamburger" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="container hero-container">
-        <div class="hero-info animate">
-          <hgroup>
-            <h4>Hello, I am Carlos A.</h4>
-            <h1>Full-Stack Developer</h1>
-          </hgroup>
-          <p>
-            I build full-stack web platforms from scratch and ship them to production.<br/>
-            Currently maintaining <strong>Lingolandias Academy</strong> — a live language learning platform with <strong>500+ active users</strong>.
-          </p>
-          <div class="hero-btn-container">
-            <a href="#projects" class="hero-button" aria-label="View Projects"
-              >Projects</a
-            >
-            <a href="#contact" class="hero-button" aria-label="Hire me"
-              >Hire me</a
-            >
-          </div>
-        </div>
-        <div class="hero-image-container animateImage">
-          <img src="./assets/foto2.png" alt="Carlos" />
-        </div>
-      </div>
-    </section>
-
-    <section class="skills" id="about">
-      <div class="container skills-container">
-        <div class="skill-heading">
-          <h2>What I do</h2>
-          <p>
-            I’ve built platforms from scratch — solo. From setting up the server
-            to polishing the UI. I like the full picture: understanding why
-            something needs to exist and then making it real.
-            <span>I work best when there’s a problem worth solving.</span>
-          </p>
-        </div>
-        <div class="scrolling-container">
-          <div class="skill-boxes">
-            <div class="skill-box">
-              <ion-icon name="logo-html5" aria-hidden="true"></ion-icon>
-              <h3>HTML</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-css3" aria-hidden="true"></ion-icon>
-              <h3>CSS</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-javascript" aria-hidden="true"></ion-icon>
-              <h3>JS</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-react" aria-hidden="true"></ion-icon>
-              <h3>React</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-figma" aria-hidden="true"></ion-icon>
-              <h3>Figma</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-nodejs" aria-hidden="true"></ion-icon>
-              <h3>Node.js</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-docker" aria-hidden="true"></ion-icon>
-              <h3>Docker</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="git-branch-outline" aria-hidden="true"></ion-icon>
-              <h3>Git</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
-              <h3>GitHub</h3>
-            </div>
-            <!-- Duplicate icons for seamless scrolling -->
-            <div class="skill-box">
-              <ion-icon name="logo-html5" aria-hidden="true"></ion-icon>
-              <h3>HTML</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-css3" aria-hidden="true"></ion-icon>
-              <h3>CSS</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-javascript" aria-hidden="true"></ion-icon>
-              <h3>JS</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-react" aria-hidden="true"></ion-icon>
-              <h3>React</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-figma" aria-hidden="true"></ion-icon>
-              <h3>Figma</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-nodejs" aria-hidden="true"></ion-icon>
-              <h3>Node.js</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-docker" aria-hidden="true"></ion-icon>
-              <h3>Docker</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="git-branch-outline" aria-hidden="true"></ion-icon>
-              <h3>Git</h3>
-            </div>
-            <div class="skill-box">
-              <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
-              <h3>GitHub</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="container">
-        <h2 class="works">Projects</h2>
-      </div>
-      <div class="container projects-container">
-        <div class="project">
-          <div>
-            <h3>Lingolandias Website</h3>
-            <p>React.js, Tailwind.css, i18n.js and Express with nodemailer</p>
-          </div>
-          <div class="project-image-container">
-            <img src="./assets/lingo-net.PNG" alt="Lingolandias Website" />
-            <button
-              class="project-button"
-              data-project="Lingolandias Website"
-              data-description="Lingolandias Website is built with React.js for the frontend, Tailwind.css for styling, i18n.js for internationalization, and Express with Nodemailer for handling backend email notifications for the test results, the messages to the staff."
-              data-link="https://lingolandias.net"
-            >
-              Show Project
-            </button>
-          </div>
-        </div>
-        <div class="project">
-          <div>
-            <h3>Lingolandias Academy</h3>
-            <p>React.js, Tailwind.css, Nest.js, PostgreSQL and Socket.io</p>
-          </div>
-          <div class="project-image-container">
-            <img src="./assets/lingo-com.PNG" alt="Lingolandias Academy" />
-            <button
-              class="project-button"
-              data-project="Lingolandias Academy"
-              data-description="Lingolandias Academy is a learning platform for students of our online school developed using React.js and Tailwind.css for the frontend, Nest.js for the backend, PostgreSQL for the database, and Socket.io for real-time communication with chat integrations for a global chat where everyone can communicate and peer to peer chat with the teachers. It has a dockerized instance of jitsi-meet to have the online classes with each student or the meeting rooms with teachers from each language we teach: Spanish, English, Polish. For storage, I used AWS S3 to store the files and images and future videos of each languge courses. At the moment, I am using JWT for authentication and authorization. The project (frontend and backend) is deployed on a Hostinger VPS using Nginx and Let's Encrypt certificates. I have develped this project alone and is currently in production. All our students love it, though there is still a lot of work to do."
-              data-link="https://lingolandias.com"
-            >
-              Show Project
-            </button>
-          </div>
-        </div>
-        <div class="project">
-          <div>
-            <h3>Handy Pro</h3>
-            <p>
-              Next.js, Nest.js, socket.io, AI Chatbot, PostgreSQL and Stripe
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="dot"></span> Available for remote roles · Bogotá, Colombia</p>
+            <h1>I build <em>AI agents</em> and full-stack platforms that run in production.</h1>
+            <p class="lead">
+              Full-stack developer and founder of <strong>Zaqi Solutions</strong>. I design the whole
+              system — database, backend, agent, UI, deploy — and I keep it running. Right now:
+              a multi-tenant <strong>WhatsApp sales agent</strong>, a real-time <strong>voice agent</strong>
+              for incident reporting, and a learning platform with <strong>500+ active users</strong>.
             </p>
+            <div class="hero-cta">
+              <a href="#ai" class="btn">See the AI work</a>
+              <a href="#contact" class="btn btn-ghost">Hire me</a>
+              <a href="https://github.com/koatth60" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+            </div>
+            <dl class="stats">
+              <div><dt>500+</dt><dd>active users on a platform I built solo</dd></div>
+              <div><dt>3</dt><dd>LLM providers routed per conversation stage</dd></div>
+              <div><dt>&lt;1s</dt><dd>agent test suite, no network, no database</dd></div>
+            </dl>
           </div>
-          <div class="project-image-container">
-            <img src="./assets/handypro.PNG" alt="Handy Pro" />
-            <button
-              class="project-button"
-              data-project="Handy Pro"
-              data-description="Handy Pro is a project built with Next.js, Nest.js, and Socket.io for real-time communication. It includes an AI-powered chatbot and uses PostgreSQL for database management. Hosted on a VPS for performance and scalability. Although I must say that, this project was develop with 5 other developers, 3 working on the frontend and 3 working on the backend. I was part of the backend team. Where my main focus was the preload of the database, the chat integration with socket.io and the payment gateway with Stripe along with the creation of some endpoints for the frontend team."
-              data-link="https://front.srv570363.hstgr.cloud"
-            >
-              Show Project
-            </button>
-          </div>
-        </div>
-        <div class="project">
-          <div>
-            <h3>Grillr</h3>
-            <p>Next.js, TypeScript, Prisma, PostgreSQL, Claude AI and Stripe</p>
-          </div>
-          <div class="project-image-container">
-            <img src="./assets/grillr.PNG" alt="Grillr" />
-            <button
-              class="project-button"
-              data-project="Grillr"
-              data-description="Grillr is an AI-powered mock interview platform built with Next.js and TypeScript. Paste any job description and get 5 tailored interview questions generated by Claude AI. Answer them and receive expert feedback with a score from 1-10. Built with Prisma and PostgreSQL for data, Stripe for payments, and deployed on Vercel. Built solo from scratch."
-              data-link="https://grillr-seven.vercel.app"
-            >
-              Show Project
-            </button>
+          <div class="hero-photo">
+            <div class="photo-ring">
+              <img src="assets/foto2.png" alt="Portrait of Carlos Mendoza" width="430" height="570" />
+            </div>
+            <div class="floating-chip chip-a"><span class="mono">LangGraph</span> · pgvector</div>
+            <div class="floating-chip chip-b"><span class="mono">Pipecat</span> · Deepgram · Claude</div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Modal -->
-    <div id="project-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h3 id="modal-title"></h3>
-        <p id="modal-description"></p>
-        <a id="modal-link" href="#" target="_blank" class="modal-link"
-          >Visit Project</a
-        >
-      </div>
-    </div>
+      <!-- AI AGENTS -->
+      <section class="section" id="ai">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="kicker">01 · AI agents</p>
+            <h2>Agents that talk to real customers — and can't make up the facts.</h2>
+            <p>
+              Both agents follow the same rule: <strong>the model drives the conversation, the code owns the facts.</strong>
+              Prices, stock, totals and report fields come from the database and validated tools, never from the model's imagination.
+            </p>
+          </header>
 
-    <section class="contact" id="contact">
-      <div class="container contact-container">
-        <div class="contact-info">
-          <h2>Contact me</h2>
-          <p>
-            Hi there! Feel free to reach out to me at your convenience. Looking
-            forward to connecting soon.
-          </p>
-          <h3>Email me at</h3>
-          <p aria-label="Email Address">koatth60@gmail.com</p>
-          <div class="contact-socials">
-            <h4>Socials</h4>
-            <div class="contact-social-links">
-              <a
-                href="https://www.facebook.com/profile.php?id=100003361604436"
-                aria-label="Facebook"
-                target="_blank"
-              >
-                <ion-icon name="logo-facebook"></ion-icon>
+          <!-- ONIX -->
+          <article class="feature reveal" aria-labelledby="onix-title">
+            <div class="feature-body">
+              <div class="feature-tags">
+                <span class="badge badge-live">In production</span>
+                <span class="badge">Private repo · walkthrough on request</span>
+              </div>
+              <h3 id="onix-title">Onix — WhatsApp AI sales agent <span class="muted">(multi-tenant SaaS)</span></h3>
+              <p>
+                A sales assistant for shops on WhatsApp. It answers catalog questions, <strong>recognizes products from customer photos</strong>,
+                recommends, takes the order, collects delivery data, shows an exact summary with confirm buttons and guides the payment.
+                Each business has its own number, catalog, rules and personality, managed from a React panel with a built-in CRM.
+              </p>
+              <ul class="checks">
+                <li><strong>LangGraph state machine</strong> with stage-scoped tools; illegal stage jumps are rejected in code.</li>
+                <li><strong>Model routing per stage:</strong> DeepSeek for discovery, Gemini for checkout, Claude for vision and the premium tier — each with automatic fallback.</li>
+                <li><strong>Photo → vision → embedding → pgvector top-3</strong> product match, with keyword fallback.</li>
+                <li><strong>Grounding check:</strong> if a reply quotes a price no tool returned, the model rewrites it.</li>
+                <li><strong>Idempotent orders</strong> with checkout fingerprint and atomic stock decrement; Postgres <strong>row-level security</strong> per tenant.</li>
+                <li>Webhook signature check, message de-duplication, 2.5 s debounce per chat, human hand-off and owner approval of payment receipts.</li>
+              </ul>
+              <ul class="chips" aria-label="Onix stack">
+                <li>Python 3.11</li><li>FastAPI</li><li>LangGraph</li><li>SQLAlchemy async</li><li>PostgreSQL 16</li><li>pgvector</li>
+                <li>Claude</li><li>Gemini</li><li>DeepSeek</li><li>WhatsApp Cloud API</li><li>React + Vite</li><li>Docker</li><li>Nginx</li>
+              </ul>
+            </div>
+
+            <figure class="diagram" aria-label="Onix agent turn diagram">
+              <svg viewBox="0 0 360 330" role="img" aria-labelledby="onix-svg-title">
+                <title id="onix-svg-title">One customer turn: prepare, agent, tools loop, finalize</title>
+                <defs>
+                  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M0 0L10 5L0 10z" class="d-arrowhead" />
+                  </marker>
+                </defs>
+                <rect x="105" y="8" width="150" height="34" rx="8" class="d-box d-accent" /><text x="180" y="30" class="d-t">WhatsApp webhook</text>
+                <line x1="180" y1="42" x2="180" y2="62" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="64" width="150" height="34" rx="8" class="d-box" /><text x="180" y="86" class="d-t">prepare</text>
+                <line x1="180" y1="98" x2="180" y2="118" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="120" width="150" height="40" rx="8" class="d-box d-strong" /><text x="180" y="138" class="d-t">agent</text><text x="180" y="152" class="d-s">model decides</text>
+                <rect x="255" y="182" width="95" height="40" rx="8" class="d-box" /><text x="302" y="200" class="d-t">tools</text><text x="302" y="214" class="d-s">facts + rules</text>
+                <path d="M255 140 C300 140 302 150 302 180" class="d-line" marker-end="url(#arr)" />
+                <path d="M255 202 C205 202 200 190 200 162" class="d-line" marker-end="url(#arr)" />
+                <text x="300" y="242" class="d-s">≤ 6 rounds</text>
+                <line x1="180" y1="160" x2="180" y2="250" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="252" width="150" height="40" rx="8" class="d-box" /><text x="180" y="270" class="d-t">finalize</text><text x="180" y="284" class="d-s">grounding check</text>
+                <rect x="8" y="182" width="88" height="40" rx="8" class="d-box d-dashed" /><text x="52" y="200" class="d-t">photo</text><text x="52" y="214" class="d-s">vision · pgvector</text>
+                <path d="M105 81 C52 81 52 120 52 180" class="d-line d-dash" marker-end="url(#arr)" />
+                <text x="180" y="318" class="d-s">reply · buttons · trace row</text>
+              </svg>
+              <figcaption>One customer turn = one LangGraph run.</figcaption>
+            </figure>
+
+            <details class="evolution">
+              <summary>How Onix evolved: 4 versions, each built on measured production data</summary>
+              <ol class="timeline">
+                <li><span class="mono">v1 · Node + Express + Prisma</span> First SaaS: DeepSeek with tool calling, S3 media, admin panel and CRM. Shipped to paying shops.</li>
+                <li><span class="mono">OMIX 2.0</span> The server executes every effect; the model only writes the text.</li>
+                <li><span class="mono">ONNIX 3.0 · TypeScript</span> Requirements measured on 14 days of production (76 conversations, 589 turns, 37 orders). A pure decision function covered by an <strong>exhaustive sweep of 10,000+ input combinations</strong>; 165 tests run in under a second with no model calls. Order invariants enforced by Postgres <span class="mono">CHECK</span> constraints and triggers.</li>
+                <li><span class="mono">Onix agent · Python + LangGraph</span> Current version: tool-calling agent with stage guards, multi-model routing, vision and pgvector.</li>
+              </ol>
+            </details>
+          </article>
+
+          <!-- VOICE AGENT -->
+          <article class="feature feature-alt reveal" aria-labelledby="voice-title">
+            <div class="feature-body">
+              <div class="feature-tags">
+                <span class="badge badge-pilot">Enterprise pilot</span>
+                <span class="badge">Private repo · walkthrough on request</span>
+              </div>
+              <h3 id="voice-title">Real-time voice agent for Major Incident reporting</h3>
+              <p>
+                A phone agent that replaces a human analyst on the Major Incident Management line of a large contact-center company.
+                Supervisors call to report a technical failure; the agent runs the <strong>triage</strong> (is it a major incident?),
+                takes the full report in natural Colombian Spanish, and leaves the ticket ready for the incident bridge.
+                Built to survive people who go off-script: answers out of order, corrections, "give me a second", a second failure mid-call.
+              </p>
+              <ul class="checks">
+                <li><strong>Streaming voice pipeline</strong> on Pipecat: WebRTC or Twilio → Deepgram STT with catalog key-terms → Silero VAD + smart-turn → Claude Haiku → TTS with fallback.</li>
+                <li><strong>Two conversation engines</strong> compared on real calls: single agent with state block vs. a <strong>Pipecat Flows</strong> graph with small, stage-scoped tools.</li>
+                <li><strong>Evidence-based extraction:</strong> a field is stored only if its verbatim quote exists in what the caller said — nothing invented, nothing misheard saved as fact.</li>
+                <li>Never asks twice: the next node is computed from data after every tool and every user turn.</li>
+                <li>Fuzzy catalog matching over 1,500 names in ~4 ms, keeping the prompt size constant so the prompt cache survives catalog edits.</li>
+                <li>Web admin panel to edit catalog, key-terms and agent settings without a redeploy. Strict <span class="mono">mypy</span>, <span class="mono">ruff</span> and <span class="mono">pytest</span> on every commit.</li>
+              </ul>
+              <ul class="chips" aria-label="Voice agent stack">
+                <li>Python 3.12</li><li>Pipecat</li><li>Pipecat Flows</li><li>Deepgram</li><li>Claude Haiku</li><li>Silero VAD</li>
+                <li>ElevenLabs / Cartesia</li><li>WebRTC</li><li>Twilio</li><li>Pydantic</li><li>mypy strict</li>
+              </ul>
+            </div>
+
+            <figure class="diagram" aria-label="Voice pipeline diagram">
+              <svg viewBox="0 0 360 330" role="img" aria-labelledby="voice-svg-title">
+                <title id="voice-svg-title">Voice pipeline: caller, speech to text, turn detection, LLM, text to speech</title>
+                <rect x="105" y="8" width="150" height="34" rx="8" class="d-box d-accent" /><text x="180" y="30" class="d-t">caller · WebRTC / Twilio</text>
+                <line x1="180" y1="42" x2="180" y2="58" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="60" width="150" height="34" rx="8" class="d-box" /><text x="180" y="82" class="d-t">Deepgram STT</text>
+                <line x1="180" y1="94" x2="180" y2="110" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="112" width="150" height="34" rx="8" class="d-box" /><text x="180" y="134" class="d-t">VAD + smart turn</text>
+                <line x1="180" y1="146" x2="180" y2="162" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="164" width="150" height="40" rx="8" class="d-box d-strong" /><text x="180" y="182" class="d-t">Claude Haiku</text><text x="180" y="196" class="d-s">flow node + tools</text>
+                <line x1="180" y1="204" x2="180" y2="220" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="222" width="150" height="34" rx="8" class="d-box" /><text x="180" y="244" class="d-t">TTS (with fallback)</text>
+                <rect x="8" y="112" width="86" height="54" rx="8" class="d-box d-dashed" /><text x="51" y="132" class="d-t">extractor</text><text x="51" y="146" class="d-s">verbatim</text><text x="51" y="158" class="d-s">quotes only</text>
+                <path d="M105 77 C51 77 51 90 51 110" class="d-line d-dash" marker-end="url(#arr)" />
+                <rect x="268" y="112" width="86" height="54" rx="8" class="d-box d-dashed" /><text x="311" y="132" class="d-t">domain</text><text x="311" y="146" class="d-s">triage rules</text><text x="311" y="158" class="d-s">duplicates</text>
+                <path d="M311 166 C311 184 290 184 257 184" class="d-line d-dash" marker-end="url(#arr)" />
+                <path d="M255 239 C330 239 330 290 260 290" class="d-line" marker-end="url(#arr)" />
+                <rect x="105" y="274" width="150" height="34" rx="8" class="d-box d-accent" /><text x="180" y="296" class="d-t">ticket for the bridge</text>
+              </svg>
+              <figcaption>Streaming pipeline; business rules live in code, not in the prompt.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section section-tint" id="projects">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="kicker">02 · Web platforms</p>
+            <h2>Full-stack products, live and used.</h2>
+          </header>
+
+          <div class="cards">
+            <article class="card reveal">
+              <a class="card-media" href="https://lingolandias.com" target="_blank" rel="noopener" aria-label="Open Lingolandias Academy">
+                <img src="assets/lingo-com.PNG" alt="Lingolandias Academy dashboard" loading="lazy" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/carlos-mendoza-060097225/"
-                aria-label="LinkedIn"
-                target="_blank"
-              >
-                <ion-icon name="logo-linkedin"></ion-icon>
+              <div class="card-body">
+                <div class="card-top"><h3>Lingolandias Academy</h3><span class="badge badge-live">Live · 500+ users</span></div>
+                <p>
+                  Learning platform for an online language school, <strong>built and run solo</strong>. Live one-on-one video classes
+                  on self-hosted Jitsi, global and private real-time chat, class calendar, role-based access for admins, teachers and students,
+                  and file storage on S3.
+                </p>
+                <ul class="chips"><li>React</li><li>Tailwind</li><li>NestJS</li><li>PostgreSQL</li><li>Socket.IO</li><li>Jitsi</li><li>AWS S3</li><li>Docker</li><li>Nginx</li></ul>
+                <div class="card-links"><a href="https://lingolandias.com" target="_blank" rel="noopener">Live site ↗</a></div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <a class="card-media" href="https://grillr-seven.vercel.app" target="_blank" rel="noopener" aria-label="Open Grillr">
+                <img src="assets/grillr.PNG" alt="Grillr mock interview app" loading="lazy" />
               </a>
-              <a
-                href="https://github.com/koatth60"
-                aria-label="GitHub"
-                target="_blank"
-              >
-                <ion-icon name="logo-github"></ion-icon>
+              <div class="card-body">
+                <div class="card-top"><h3>Grillr</h3><span class="badge badge-live">Live</span></div>
+                <p>
+                  AI mock-interview SaaS. Paste a job description, get 5 tailored questions generated by Claude, answer them and get
+                  a 1–10 score with written feedback. Session history, auth and Stripe billing. Built solo.
+                </p>
+                <ul class="chips"><li>Next.js</li><li>TypeScript</li><li>NestJS</li><li>Prisma</li><li>PostgreSQL</li><li>Claude API</li><li>Stripe</li></ul>
+                <div class="card-links">
+                  <a href="https://grillr-seven.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+                  <a href="https://github.com/koatth60/grillr" target="_blank" rel="noopener">Frontend code</a>
+                  <a href="https://github.com/koatth60/grillr-back" target="_blank" rel="noopener">API code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <a class="card-media" href="https://lingolandias.net" target="_blank" rel="noopener" aria-label="Open Lingolandias website">
+                <img src="assets/lingo-net.PNG" alt="Lingolandias marketing website" loading="lazy" />
               </a>
-              
+              <div class="card-body">
+                <div class="card-top"><h3>Lingolandias Website</h3><span class="badge badge-live">Live</span></div>
+                <p>
+                  Public site for the school in Spanish, English and Polish, with an interactive language-level quiz whose results
+                  and contact messages are emailed to the staff.
+                </p>
+                <ul class="chips"><li>React</li><li>Tailwind</li><li>i18next</li><li>Express</li><li>Nodemailer</li></ul>
+                <div class="card-links">
+                  <a href="https://lingolandias.net" target="_blank" rel="noopener">Live site ↗</a>
+                  <a href="https://github.com/koatth60/lingolandias" target="_blank" rel="noopener">Code</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-media">
+                <img src="assets/handypro.PNG" alt="Handy Pro services marketplace" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <div class="card-top"><h3>Handy Pro</h3><span class="badge">Team of 6 · backend</span></div>
+                <p>
+                  Marketplace that connects clients with home-service professionals. On the backend team I built the
+                  <strong>real-time chat</strong> (Socket.IO gateway), the <strong>Stripe payment flow</strong> with webhooks,
+                  the database preload and several REST endpoints.
+                </p>
+                <ul class="chips"><li>NestJS</li><li>TypeORM</li><li>PostgreSQL</li><li>Socket.IO</li><li>Stripe</li><li>Next.js</li></ul>
+                <div class="card-links">
+                  <a href="https://github.com/koatth60/handypro-back" target="_blank" rel="noopener">API code</a>
+                  <a href="https://github.com/koatth60/handypro-frontend" target="_blank" rel="noopener">Frontend code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section class="section" id="stack">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="kicker">03 · Stack</p>
+            <h2>What I use to ship.</h2>
+          </header>
+          <div class="stack-grid">
+            <div class="stack-col reveal">
+              <h3>AI &amp; agents</h3>
+              <ul class="chips"><li>LangGraph</li><li>Pipecat / Flows</li><li>Claude API</li><li>Gemini</li><li>DeepSeek</li><li>Tool calling</li><li>Embeddings · pgvector</li><li>Vision</li><li>Deepgram STT</li><li>TTS</li><li>WhatsApp Cloud API</li></ul>
+            </div>
+            <div class="stack-col reveal">
+              <h3>Backend</h3>
+              <ul class="chips"><li>Python</li><li>FastAPI</li><li>TypeScript</li><li>Node.js</li><li>NestJS</li><li>Express</li><li>Socket.IO</li><li>REST</li><li>JWT / sessions</li><li>Stripe</li></ul>
+            </div>
+            <div class="stack-col reveal">
+              <h3>Frontend</h3>
+              <ul class="chips"><li>React</li><li>Next.js</li><li>Vite</li><li>Tailwind CSS</li><li>Redux</li><li>i18next</li><li>HTML / CSS</li></ul>
+            </div>
+            <div class="stack-col reveal">
+              <h3>Data</h3>
+              <ul class="chips"><li>PostgreSQL</li><li>Row-level security</li><li>SQLAlchemy</li><li>Alembic</li><li>Prisma</li><li>TypeORM</li><li>MongoDB</li></ul>
+            </div>
+            <div class="stack-col reveal">
+              <h3>DevOps</h3>
+              <ul class="chips"><li>Docker Compose</li><li>Nginx</li><li>Let's Encrypt</li><li>Linux VPS</li><li>DigitalOcean</li><li>AWS S3</li><li>Vercel</li><li>PM2</li></ul>
+            </div>
+            <div class="stack-col reveal">
+              <h3>Quality</h3>
+              <ul class="chips"><li>pytest</li><li>mypy strict</li><li>ruff</li><li>Exhaustive tests</li><li>Git hooks</li><li>Per-turn tracing</li></ul>
             </div>
           </div>
         </div>
-        <div class="contact-form">
-          <form action="https://formsubmit.co/koatth60@gmail.com" method="POST">
-            <!-- hoeypot -->
-            <input type="text" name="_honey" style="display: none" />
+      </section>
+
+      <!-- APPROACH -->
+      <section class="section section-tint" id="approach">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="kicker">04 · How I work</p>
+            <h2>Principles I learned shipping agents to real users.</h2>
+          </header>
+          <div class="principles">
+            <div class="principle reveal">
+              <span class="num">01</span>
+              <h3>The model drafts, the code decides</h3>
+              <p>Facts, totals and state changes go through validated tools and database constraints. The LLM writes the words, not the truth.</p>
+            </div>
+            <div class="principle reveal">
+              <span class="num">02</span>
+              <h3>Measure on real conversations</h3>
+              <p>Every turn writes a trace: tools, model, tokens, latency. Redesigns start from production data, not from guesses.</p>
+            </div>
+            <div class="principle reveal">
+              <span class="num">03</span>
+              <h3>Tests that run in a second</h3>
+              <p>Decision logic is pure and tested without network, database or model calls — so it runs on every commit.</p>
+            </div>
+            <div class="principle reveal">
+              <span class="num">04</span>
+              <h3>Own it end to end</h3>
+              <p>From the schema to the Nginx config to the 2 a.m. fix. I've built platforms solo and kept them running for real users.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-info reveal">
+            <p class="kicker">05 · Contact</p>
+            <h2>Let's build something that works in production.</h2>
+            <p>Open to full-time remote roles and freelance projects — especially AI agents, conversational products and full-stack platforms.</p>
+            <a class="contact-mail" href="mailto:koatth60@gmail.com">koatth60@gmail.com</a>
+            <ul class="socials">
+              <li><a href="https://github.com/koatth60" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+                GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/carlos-mendoza-060097225/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+                LinkedIn</a></li>
+              <li><a href="resume.pdf" download aria-label="Download resume">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Resume</a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" action="https://formsubmit.co/koatth60@gmail.com" method="POST">
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://koatth60.github.io/success.html"
-            />
-            <div>
-              <label for="name">Your name:</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Your name"
-                required
-              />
-              <label for="email">Your email:</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                autocomplete="email"
-                placeholder="Your email"
-                required
-              />
-              <label for="subject">Subject:</label>
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                autocomplete="off"
-                placeholder="subject"
-                required
-              />
-              <label for="message">Write your message:</label>
-              <textarea
-                name="message"
-                id="message"
-                rows="5"
-                placeholder="Write your message"
-                required
-              ></textarea>
+            <input type="hidden" name="_next" value="https://koatth60.github.io/success.html" />
+            <input type="hidden" name="_template" value="table" />
+            <div class="field-row">
+              <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+              <label>Email<input type="email" name="email" autocomplete="email" required /></label>
             </div>
-            <button type="submit">Submit</button>
+            <label>Subject<input type="text" name="_subject" autocomplete="off" required /></label>
+            <label>Message<textarea name="message" rows="5" required></textarea></label>
+            <button type="submit" class="btn">Send message</button>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <footer>
-      <div class="container footer-container">
-        <p>&copy; 2026 Carlos Mendoza all rights reserved</p>
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© <span id="year">2026</span> Carlos Mendoza · Bogotá, Colombia</p>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
-
-    <div class="btt-button">
-      <a href="/" aria-label="Back to top">
-        <ion-icon name="arrow-up-outline"></ion-icon>
-      </a>
-    </div>
-
   </body>
 </html>

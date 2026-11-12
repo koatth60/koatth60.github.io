@@ -1,103 +1,60 @@
-//RESPONSIVE NAVBAR
+document.documentElement.classList.add("js");
 
-const hamburger = document.querySelector('.hamburger')
-const navMenu = document.querySelector('.nav-menu')
-const body = document.querySelector('body')
+// ===== Mobile menu =====
+const menu = document.getElementById("nav-menu");
+const burger = document.querySelector(".hamburger");
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    body.classList.toggle('no-scroll')
-})
+const setMenu = (open) => {
+  menu.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", String(open));
+  burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+};
+burger.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
 
-//STICKY NAV
-const nav = document.querySelector('nav');
-const bttButton = document.querySelector('.btt-button');
-const handleScroll = () => {
-    if(window.scrollY > 0) {
-        nav.classList.add('sticky-nav')
-        bttButton.classList.add('show-btt-button')
-    } else {
-        nav.classList.remove('sticky-nav')
-        bttButton.classList.remove('show-btt-button')
-    }
-}
-window.addEventListener('scroll', handleScroll)
-
-// ACTIVE LINKS + CLEAN URL SCROLL
-
-const navLinks = document.querySelectorAll('.nav-menu li a')
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', function (event) {
-        const targetId = this.getAttribute('href').slice(1);
-        const target = document.getElementById(targetId);
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, '', window.location.pathname);
-    });
+// ===== Theme toggle =====
+const root = document.documentElement;
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+document.querySelector(".theme-toggle").addEventListener("click", () => {
+  const current = root.dataset.theme || (systemDark.matches ? "dark" : "light");
+  const next = current === "dark" ? "light" : "dark";
+  root.dataset.theme = next;
+  try { localStorage.setItem("theme", next); } catch (e) {}
 });
 
-navLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-        navLinks.forEach((link) => {
-            link.parentElement.classList.remove('active');
-        });
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-        body.classList.remove('no-scroll');
-        this.parentElement.classList.add('active');
-    });
-});
+// ===== Header border on scroll =====
+const header = document.querySelector(".site-header");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-// ANIMATIONS 
-const animateElements = gsap.utils.toArray('.animate')
-const animateImage = gsap.utils.toArray('.animateImage')
-gsap.from(animateElements, {
-    opacity: 0,
-    x: 50,
-    duration: 1,
-    stagger:0.2,
-});
+// ===== Active nav link =====
+const links = [...menu.querySelectorAll('a[href^="#"]')];
+const sections = links.map((l) => document.querySelector(l.getAttribute("href"))).filter(Boolean);
+const setActive = () => {
+  const line = window.innerHeight * 0.4;
+  let current = null;
+  sections.forEach((s) => {
+    if (s.getBoundingClientRect().top <= line) current = s.id;
+  });
+  links.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === "#" + current));
+};
+window.addEventListener("scroll", setActive, { passive: true });
+setActive();
 
-gsap.from(animateImage, {
-    opacity: 0,
-    x: -50,
-    duration: 1,
-    stagger:0.2,
-})
-
-
-// Modal functionality
-document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("project-modal");
-    const modalTitle = document.getElementById("modal-title");
-    const modalDescription = document.getElementById("modal-description");
-    const modalLink = document.getElementById("modal-link");
-    const closeBtn = document.querySelector(".close-btn");
-  
-   
-    document.querySelectorAll(".project-button").forEach(button => {
-      button.addEventListener("click", () => {
-        // Populate modal with project details from data attributes
-        modalTitle.textContent = button.getAttribute("data-project");
-        modalDescription.textContent = button.getAttribute("data-description");
-        modalLink.href = button.getAttribute("data-link");
-  
-        // Show modal
-        modal.style.display = "block";
-      });
-    });
-   
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
- 
-    window.addEventListener("click", event => {
-      if (event.target === modal) {
-        modal.style.display = "none";
+// ===== Reveal on scroll =====
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        revealObserver.unobserve(entry.target);
       }
     });
-  });
-  
+  },
+  { threshold: 0.08 }
+);
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+document.getElementById("year").textContent = new Date().getFullYear();

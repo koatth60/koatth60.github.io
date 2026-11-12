@@ -1,47 +1,51 @@
 # Carlos Mendoza — Portfolio
 
-Personal portfolio website showcasing my projects, skills, and experience as a full-stack developer. Live at [koatth60.github.io](https://koatth60.github.io).
+Personal portfolio of Carlos Mendoza, a full-stack developer in Bogotá, Colombia, who builds AI agents and full-stack platforms and runs them in production.
+
+**Live:** [koatth60.github.io](https://koatth60.github.io)
 
 ---
 
-## About
+## What the site shows
 
-I'm a full-stack developer based in Bogotá, Colombia. I build web platforms from scratch and take them to production. Currently maintaining [Lingolandias Academy](https://lingolandias.com) — a live language learning platform with 500+ active users.
+**AI agents**
 
----
+- **Onix — WhatsApp AI sales agent (multi-tenant SaaS).** Python, FastAPI, LangGraph, PostgreSQL + pgvector with row-level security, and routing across Claude, Gemini and DeepSeek by conversation stage. The agent recognizes products from customer photos, takes orders and guides payments. Tools own prices, stock and totals; the model only drives the conversation.
+- **Real-time voice agent for Major Incident reporting.** Python, Pipecat and Pipecat Flows, Deepgram STT, Silero VAD with smart-turn detection, Claude Haiku and TTS with fallback. The agent runs the triage, takes the full report by phone, and stores a field only if the caller actually said it.
 
-## Featured Projects
+**Web platforms**
 
-- **[Lingolandias Academy](https://lingolandias.com)** — Language learning platform with live one-on-one classes, real-time chat, and class calendar. Built solo. 500+ active users.
-- **[Lingolandias Website](https://lingolandias.net)** — Public marketing site with multi-language support and language proficiency quiz.
-- **Handy Pro** — Service marketplace with real-time chat, AI chatbot, and Stripe payments. Built with a 6-person team.
-
----
-
-## Tech Stack
-
-**Frontend:** React, Next.js, TypeScript, JavaScript, Tailwind CSS, Vite
-
-**Backend:** NestJS, Node.js, Express.js, PostgreSQL, MongoDB, Socket.IO
-
-**DevOps:** Docker, AWS S3, Nginx, VPS deployment, SSL
-
-**Tools:** Git, JWT, REST APIs, Figma
+- **[Lingolandias Academy](https://lingolandias.com)** — Language-learning platform with 500+ active users, built and run solo (React, NestJS, PostgreSQL, Socket.IO, Jitsi, S3, Docker).
+- **[Grillr](https://grillr-seven.vercel.app)** — AI mock-interview SaaS (Next.js, NestJS, Prisma, Claude API, Stripe).
+- **[Lingolandias Website](https://lingolandias.net)** — Multi-language marketing site with a level quiz (React, i18next, Express).
+- **Handy Pro** — Services marketplace built by a team of 6. My part was the backend: real-time chat, Stripe payments and the data preload (NestJS, TypeORM, Socket.IO).
 
 ---
 
-## Site Structure
+## Tech
+
+The site is plain HTML, CSS and JavaScript, with no build step, and is served by GitHub Pages.
+
+- Light and dark themes: the site follows the system setting, and a manual toggle is saved in `localStorage`.
+- The layout is responsive and has an accessible mobile menu.
+- Architecture diagrams are inline SVG and follow the active theme.
+- Sections fade in with `IntersectionObserver`. The animation is off when the user asks for reduced motion.
+- The contact form uses [FormSubmit](https://formsubmit.co) and a honeypot field.
 
 ```
 /
-├── index.html        # Main portfolio page
-├── script.js         # Animations and interactions
-├── navbar.css        # Navigation styles
-├── hero.css          # Hero section styles
-├── skills.css        # Skills section styles
-├── projects.css      # Projects section styles
-├── contact.css       # Contact section styles
-└── assets/           # Images and static files
+├── index.html     # Single-page portfolio
+├── styles.css     # Design tokens, layout, components, themes
+├── script.js      # Menu, theme toggle, active nav, reveal animations
+├── success.html   # Contact form confirmation
+├── resume.pdf
+└── assets/        # Photo and project screenshots
+```
+
+Run it locally:
+
+```bash
+python -m http.server 5173
 ```
 
 ---
@@ -50,10 +54,10 @@ I'm a full-stack developer based in Bogotá, Colombia. I build web platforms fro
 
 - Email: koatth60@gmail.com
 - GitHub: [github.com/koatth60](https://github.com/koatth60)
-- Portfolio: [koatth60.github.io](https://koatth60.github.io)
+- LinkedIn: [carlos-mendoza-060097225](https://www.linkedin.com/in/carlos-mendoza-060097225/)
 
 ---
 
 ## License
 
-All rights reserved. This source code is publicly visible for portfolio purposes only and may not be used, copied, or distributed without explicit permission from the author.
+All rights reserved. The source is public for portfolio purposes only. Do not use, copy or distribute it without permission from the author.

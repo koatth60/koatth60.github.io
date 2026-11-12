@@ -3,43 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>successful</title>
+    <title>Message sent — Carlos Mendoza</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <style>
+      body { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 16px; }
+      .box { max-width: 460px; }
+      h1 { font-size: 2rem; letter-spacing: -0.02em; margin-bottom: 10px; }
+      p { color: var(--muted); margin-bottom: 24px; }
+    </style>
   </head>
   <body>
-    <div>
-      <h1>Contact me</h1>
-      <p>
-        Your message was sent successfully, we will be in touch with you very, very
-        soon...
-      </p>
+    <div class="box">
+      <h1>Thanks — message sent.</h1>
+      <p>I'll get back to you soon. Taking you back to the portfolio in a few seconds…</p>
+      <a class="btn" href="./">Back to portfolio</a>
     </div>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-      }
-
-      h1 {
-        font-size: 3rem;
-        line-height: 2.25rem;
-        margin-bottom: 1.2rem;
-        font-weight: 400;
-        color: #6b7280;
-      }
-
-      p {
-        font-size: 1.5rem;
-        line-height: 1rem;
-        font-weight: 400;
-        color: #6b7280;
-        line-height: 1;
-      }
-    </style>
     <script>
-      
-      setTimeout(function () {
-        window.location.href = "index.html";
-      }, 5000); 
+      setTimeout(() => (window.location.href = "./"), 6000);
     </script>
   </body>
 </html>
