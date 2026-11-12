@@ -3,12 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlos Mendoza — Full-Stack &amp; AI Agents Developer</title>
-    <meta
-      name="description"
-      content="Carlos Mendoza — full-stack developer in Bogotá building production web platforms and AI agents: a WhatsApp sales agent (LangGraph, pgvector) and a real-time voice agent (Pipecat, Deepgram, Claude)."
-    />
-    <meta property="og:title" content="Carlos Mendoza — Full-Stack & AI Agents Developer" />
+    <title>Carlos Mendoza, full-stack developer</title>
+    <meta name="description" content="Carlos Mendoza, a full-stack developer in Bogotá. I build AI agents (a WhatsApp sales bot and a voice agent for incident calls) and web apps, and I keep them running." />
+    <meta property="og:title" content="Carlos Mendoza, full-stack developer" />
     <meta
       property="og:description"
       content="Production web platforms and AI agents: WhatsApp sales agent, real-time voice agent, a language-learning platform with 200+ active users."
@@ -40,13 +37,13 @@
 
     <header class="site-header">
       <nav class="container nav" aria-label="Main">
-        <a href="#top" class="logo" aria-label="Carlos Mendoza — home">Carlos <span>Mendoza.</span></a>
+        <a href="#top" class="logo" aria-label="Carlos Mendoza, home">Carlos <span>Mendoza.</span></a>
 
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#ai">AI Agents</a></li>
+          <li><a href="#ai">Agents</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#stack">Stack</a></li>
-          <li><a href="#approach">Approach</a></li>
+          <li><a href="#approach">About</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="resume.pdf" download class="btn btn-small">Resume</a></li>
         </ul>
@@ -68,26 +65,24 @@
       <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <h1>I build <em>AI agents</em> and full-stack platforms that run in production.</h1>
+            <h1>Hi, I'm Carlos. I build <em>AI agents</em> and web apps, and I keep them running.</h1>
             <p class="lead">
-              Full-stack developer and founder of <a class="inline-link" href="https://zaqisolutions.com" target="_blank" rel="noopener"><strong>Zaqi Solutions</strong></a>. I design the whole
-              system — database, backend, agent, UI, deploy — and I keep it running. Right now:
-              a multi-tenant <strong>WhatsApp sales agent</strong>, a real-time <strong>voice agent</strong>
-              for incident reporting, and a learning platform with <strong>200+ active users</strong>.
+              I'm a full-stack developer in Bogotá. Right now I'm building Onix, a WhatsApp sales bot for small shops,
+              through my studio <a class="inline-link" href="https://zaqisolutions.com" target="_blank" rel="noopener"><strong>Zaqi Solutions</strong></a>.
+              I also built a voice agent that takes incident calls, and I run the platform of an online language school
+              with 200+ students.
             </p>
             <div class="hero-cta">
-              <a href="#ai" class="btn">See the AI work</a>
-              <a href="#contact" class="btn btn-ghost">Hire me</a>
+              <a href="#ai" class="btn">See the agents</a>
+              <a href="#contact" class="btn btn-ghost">Contact me</a>
               <a href="https://github.com/koatth60" target="_blank" rel="noopener" class="btn btn-ghost">GitHub <svg class="i-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a>
             </div>
-            <p class="availability"><span class="dot" aria-hidden="true"></span> Open to remote roles · Bogotá, Colombia (UTC−5)</p>
+            <p class="availability"><span class="dot" aria-hidden="true"></span> Looking for remote work. Bogotá, UTC−5.</p>
           </div>
           <div class="hero-photo">
             <div class="photo-ring">
               <img src="assets/foto2.png" alt="Portrait of Carlos Mendoza" width="430" height="570" />
             </div>
-            <div class="floating-chip chip-a"><strong>LangGraph</strong> · pgvector</div>
-            <div class="floating-chip chip-b"><strong>Pipecat</strong> · Deepgram · Claude</div>
           </div>
         </div>
       </section>
@@ -96,34 +91,35 @@
       <section class="section" id="ai">
         <div class="container">
           <header class="section-head">
-            <h2>Agents that talk to real customers — and can't make up the facts.</h2>
+            <h2>Two AI agents I built</h2>
             <p>
-              Both agents follow the same rule: <strong>the model drives the conversation, the code owns the facts.</strong>
-              Prices, stock, totals and report fields come from the database and validated tools, never from the model's imagination.
+              Both talk to real people, so the hard part was keeping them from making things up. In both, the model chooses
+              what to say, but prices, totals and report data come from the database, through code I wrote.
             </p>
           </header>
 
           <!-- ONIX -->
           <article class="feature" aria-labelledby="onix-title">
             <div class="feature-body">
-              <div class="feature-tags">
-                <span class="badge badge-live">In production</span>
-                <span class="badge">Private repo · walkthrough on request</span>
-              </div>
-              <h3 id="onix-title">Onix — WhatsApp AI sales agent <span class="muted">(multi-tenant SaaS)</span></h3>
+              <div class="feature-tags"><span class="badge badge-live">In production</span></div>
+              <h3 id="onix-title">Onix, a WhatsApp sales agent</h3>
               <p>
-                A sales assistant for shops on WhatsApp. It answers catalog questions, <strong>recognizes products from customer photos</strong>,
-                recommends, takes the order, collects delivery data, shows an exact summary with confirm buttons and guides the payment.
-                Each business has its own number, catalog, rules and personality, managed from a React panel with a built-in CRM.
+                Small shops in Colombia sell a lot through WhatsApp. Onix answers their customers: it finds products in the
+                catalog, recognizes a product from a photo the customer sends, takes the order and the delivery address, and
+                guides the payment. When a customer sends a payment receipt, the owner gets a button to approve it. Each shop
+                sets up its own catalog and rules from a web panel.
               </p>
-              <ul class="checks">
-                <li><strong>LangGraph state machine</strong> with stage-scoped tools; illegal stage jumps are rejected in code.</li>
-                <li><strong>Model routing per stage:</strong> DeepSeek for discovery, Gemini for checkout, Claude for vision and the premium tier — each with automatic fallback.</li>
-                <li><strong>Photo → vision → embedding → pgvector top-3</strong> product match, with keyword fallback.</li>
-                <li><strong>Grounding check:</strong> if a reply quotes a price no tool returned, the model rewrites it.</li>
-                <li><strong>Idempotent orders</strong> with checkout fingerprint and atomic stock decrement; Postgres <strong>row-level security</strong> per tenant.</li>
-                <li>Webhook signature check, message de-duplication, 2.5 s debounce per chat, human hand-off and owner approval of payment receipts.</li>
-              </ul>
+              <p>
+                The first versions let the model write the reply and then tried to fix it with checks. At one point there were
+                forty of them, and it still went wrong. So I turned it around. Now a LangGraph graph decides which tools the
+                model can use at each step of the sale, and only those tools can read prices or create an order. If a reply
+                mentions a price that no tool returned, it gets rewritten before it is sent.
+              </p>
+              <p>
+                Each step uses a different model: DeepSeek while the customer browses, Gemini at checkout, Claude for photos,
+                with a fallback if one is down. Photos are matched to products with embeddings in pgvector. An order can't be
+                created twice, and each shop's data is kept apart with row-level security in Postgres.
+              </p>
               <ul class="chips" aria-label="Onix stack">
                 <li>Python 3.11</li><li>FastAPI</li><li>LangGraph</li><li>SQLAlchemy async</li><li>PostgreSQL 16</li><li>pgvector</li>
                 <li>Claude</li><li>Gemini</li><li>DeepSeek</li><li>WhatsApp Cloud API</li><li>React + Vite</li><li>Docker</li><li>Nginx</li>
@@ -149,46 +145,47 @@
                 <text x="300" y="242" class="d-s">≤ 6 rounds</text>
                 <line x1="180" y1="160" x2="180" y2="250" class="d-line" marker-end="url(#arr)" />
                 <rect x="105" y="252" width="150" height="40" rx="8" class="d-box" /><text x="180" y="270" class="d-t">finalize</text><text x="180" y="284" class="d-s">grounding check</text>
-                <rect x="8" y="182" width="88" height="40" rx="8" class="d-box d-dashed" /><text x="52" y="200" class="d-t">photo</text><text x="52" y="214" class="d-s">vision · pgvector</text>
+                <rect x="8" y="182" width="88" height="54" rx="8" class="d-box d-dashed" /><text x="52" y="200" class="d-t">photo</text><text x="52" y="214" class="d-s">vision</text><text x="52" y="228" class="d-s">pgvector</text>
                 <path d="M105 81 C52 81 52 120 52 180" class="d-line d-dash" marker-end="url(#arr)" />
-                <text x="180" y="318" class="d-s">reply · buttons · trace row</text>
+                <text x="180" y="318" class="d-s">reply, buttons, trace</text>
               </svg>
-              <figcaption>One customer turn = one LangGraph run.</figcaption>
+              <figcaption>One customer message, start to finish.</figcaption>
             </figure>
 
             <details class="evolution">
-              <summary>How Onix evolved: 4 versions, each built on measured production data</summary>
+              <summary>How it got here: four rewrites</summary>
               <ol class="timeline">
-                <li><span class="mono">v1 · Node + Express + Prisma</span> First SaaS: DeepSeek with tool calling, S3 media, admin panel and CRM. Shipped to paying shops.</li>
-                <li><span class="mono">OMIX 2.0</span> The server executes every effect; the model only writes the text.</li>
-                <li><span class="mono">ONNIX 3.0 · TypeScript</span> Requirements measured on 14 days of production (76 conversations, 589 turns, 37 orders). A pure decision function covered by an <strong>exhaustive sweep of 10,000+ input combinations</strong>; 165 tests run in under a second with no model calls. Order invariants enforced by Postgres <span class="mono">CHECK</span> constraints and triggers.</li>
-                <li><span class="mono">Onix agent · Python + LangGraph</span> Current version: tool-calling agent with stage guards, multi-model routing, vision and pgvector.</li>
+                <li><span class="mono">Version 1: Node, Express, Prisma</span> DeepSeek with tool calling, an admin panel and a CRM. Real shops used it.</li>
+                <li><span class="mono">OMIX 2.0</span> I moved every action to the server. The model only wrote the text.</li>
+                <li><span class="mono">ONNIX 3.0: TypeScript</span> I took 14 days of real conversations (76 chats, 589 messages, 37 orders) and rebuilt the logic as one pure function. A test tries more than 10,000 combinations of inputs and runs in under a second.</li>
+                <li><span class="mono">Current: Python and LangGraph</span> Back to a tool-calling agent, but now each step of the sale limits what the model can do.</li>
               </ol>
+              <p class="note">The code is private because it runs a business. I'm happy to walk through it on a call.</p>
             </details>
           </article>
 
           <!-- VOICE AGENT -->
           <article class="feature feature-alt" aria-labelledby="voice-title">
             <div class="feature-body">
-              <div class="feature-tags">
-                <span class="badge badge-pilot">Enterprise pilot</span>
-                <span class="badge">Private repo · walkthrough on request</span>
-              </div>
-              <h3 id="voice-title">Real-time voice agent for Major Incident reporting</h3>
+              <div class="feature-tags"><span class="badge badge-pilot">Pilot</span></div>
+              <h3 id="voice-title">A voice agent for incident calls</h3>
               <p>
-                A phone agent that replaces a human analyst on the Major Incident Management line of a large contact-center company.
-                Supervisors call to report a technical failure; the agent runs the <strong>triage</strong> (is it a major incident?),
-                takes the full report in natural Colombian Spanish, and leaves the ticket ready for the incident bridge.
-                Built to survive people who go off-script: answers out of order, corrections, "give me a second", a second failure mid-call.
+                At my job on a Major Incident team, supervisors call when a tool fails for their team. We ask the same things
+                every time: what failed, who is calling, which operation, how many people are affected. I built an agent that
+                takes those calls in Colombian Spanish and leaves the report ready for the analyst.
               </p>
-              <ul class="checks">
-                <li><strong>Streaming voice pipeline</strong> on Pipecat: WebRTC or Twilio → Deepgram STT with catalog key-terms → Silero VAD + smart-turn → Claude Haiku → TTS with fallback.</li>
-                <li><strong>Two conversation engines</strong> compared on real calls: single agent with state block vs. a <strong>Pipecat Flows</strong> graph with small, stage-scoped tools.</li>
-                <li><strong>Evidence-based extraction:</strong> a field is stored only if its verbatim quote exists in what the caller said — nothing invented, nothing misheard saved as fact.</li>
-                <li>Never asks twice: the next node is computed from data after every tool and every user turn.</li>
-                <li>Fuzzy catalog matching over 1,500 names in ~4 ms, keeping the prompt size constant so the prompt cache survives catalog edits.</li>
-                <li>Web admin panel to edit catalog, key-terms and agent settings without a redeploy. Strict <span class="mono">mypy</span>, <span class="mono">ruff</span> and <span class="mono">pytest</span> on every commit.</li>
-              </ul>
+              <p>
+                Voice is harder than chat. People answer out of order, correct themselves, say "give me a second", or report a
+                second failure in the middle of the call. Two things I learned the hard way: if a tool has a required field the
+                caller hasn't mentioned yet, the model invents a value. And if a step speaks when it starts right after a question,
+                the agent answers its own question. Now a field is saved only when the caller's own words back it up, and the code,
+                not the model, decides what to ask next.
+              </p>
+              <p>
+                It runs on Pipecat: Deepgram turns speech into text, Silero VAD detects when the caller stops talking, Claude Haiku
+                writes the answer, and a text-to-speech voice reads it, with a backup voice. Calls come in over WebRTC or Twilio.
+              </p>
+              <p class="note">This code is private too. Ask me for a demo.</p>
               <ul class="chips" aria-label="Voice agent stack">
                 <li>Python 3.12</li><li>Pipecat</li><li>Pipecat Flows</li><li>Deepgram</li><li>Claude Haiku</li><li>Silero VAD</li>
                 <li>ElevenLabs / Cartesia</li><li>WebRTC</li><li>Twilio</li><li>Pydantic</li><li>mypy strict</li>
@@ -198,7 +195,7 @@
             <figure class="diagram" aria-label="Voice pipeline diagram">
               <svg viewBox="0 0 360 330" role="img" aria-labelledby="voice-svg-title">
                 <title id="voice-svg-title">Voice pipeline: caller, speech to text, turn detection, LLM, text to speech</title>
-                <rect x="105" y="8" width="150" height="34" rx="8" class="d-box d-accent" /><text x="180" y="30" class="d-t">caller · WebRTC / Twilio</text>
+                <rect x="105" y="8" width="150" height="34" rx="8" class="d-box d-accent" /><text x="180" y="30" class="d-t">caller (WebRTC, Twilio)</text>
                 <line x1="180" y1="42" x2="180" y2="58" class="d-line" marker-end="url(#arr)" />
                 <rect x="105" y="60" width="150" height="34" rx="8" class="d-box" /><text x="180" y="82" class="d-t">Deepgram STT</text>
                 <line x1="180" y1="94" x2="180" y2="110" class="d-line" marker-end="url(#arr)" />
@@ -214,7 +211,7 @@
                 <path d="M255 239 C330 239 330 290 260 290" class="d-line" marker-end="url(#arr)" />
                 <rect x="105" y="274" width="150" height="34" rx="8" class="d-box d-accent" /><text x="180" y="296" class="d-t">ticket for the bridge</text>
               </svg>
-              <figcaption>Streaming pipeline; business rules live in code, not in the prompt.</figcaption>
+              <figcaption>From the caller speaking to the agent answering.</figcaption>
             </figure>
           </article>
         </div>
@@ -224,7 +221,7 @@
       <section class="section section-tint" id="projects">
         <div class="container">
           <header class="section-head">
-            <h2>Full-stack products, live and used.</h2>
+            <h2>Other things I've built</h2>
           </header>
 
           <div class="cards">
@@ -233,11 +230,11 @@
                 <img src="assets/lingo-academy.webp" alt="Lingolandias Academy teacher schedule with weekly classes" loading="lazy" width="1440" height="900" />
               </a>
               <div class="card-body">
-                <div class="card-top"><h3>Lingolandias Academy</h3><span class="badge badge-live">Live · 200+ users</span></div>
+                <div class="card-top"><h3>Lingolandias Academy</h3><span class="badge badge-live">200+ students</span></div>
                 <p>
-                  Learning platform for an online language school, <strong>built and run solo</strong>. Live one-on-one and group classes
-                  on LiveKit with recordings, a built-in LMS (courses, assessments, flashcards), real-time chat, class scheduling,
-                  role-based access for admins, teachers and students, and a Windows desktop app for classes.
+                  The platform of an online language school. I built it alone and I still run it. Teachers give live classes on it,
+                  with recordings. Students take courses, quizzes and flashcards, and everyone can chat in real time. There is also a
+                  Windows app for classes.
                 </p>
                 <ul class="chips"><li>React</li><li>Redux</li><li>Tailwind</li><li>NestJS</li><li>PostgreSQL</li><li>Socket.IO</li><li>LiveKit</li><li>Electron</li><li>AWS S3</li><li>Docker</li><li>Nginx</li></ul>
                 <div class="card-links"><a href="https://lingolandias.com" target="_blank" rel="noopener">Live site <svg class="i-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></div>
@@ -251,8 +248,8 @@
               <div class="card-body">
                 <div class="card-top"><h3>Grillr</h3><span class="badge badge-live">Live</span></div>
                 <p>
-                  AI mock-interview SaaS. Paste a job description, get 5 tailored questions generated by Claude, answer them and get
-                  a 1–10 score with written feedback. Session history, auth and Stripe billing. Built solo.
+                  You paste a job description and Claude asks you five interview questions for that role. Then it scores each answer
+                  from 1 to 10 and tells you what to improve. It has accounts, history and Stripe payments. I built it alone.
                 </p>
                 <ul class="chips"><li>Next.js</li><li>TypeScript</li><li>NestJS</li><li>Prisma</li><li>PostgreSQL</li><li>Claude API</li><li>Stripe</li></ul>
                 <div class="card-links">
@@ -270,8 +267,8 @@
               <div class="card-body">
                 <div class="card-top"><h3>Lingolandias Website</h3><span class="badge badge-live">Live</span></div>
                 <p>
-                  Public site for the school in Spanish, English and Polish, with an interactive language-level quiz whose results
-                  and contact messages are emailed to the staff.
+                  The school's public site, in Spanish, English and Polish. Visitors can take a level test, and the results go to the
+                  staff by email.
                 </p>
                 <ul class="chips"><li>React</li><li>Tailwind</li><li>i18next</li><li>Express</li><li>Nodemailer</li></ul>
                 <div class="card-links">
@@ -285,10 +282,10 @@
                 <img src="assets/zaqi.webp" alt="Zaqi Solutions website presenting Onix, the WhatsApp sales agent" loading="lazy" width="1440" height="900" />
               </a>
               <div class="card-body">
-                <div class="card-top"><h3>Zaqi Solutions</h3><span class="badge badge-live">Founder · Live</span></div>
+                <div class="card-top"><h3>Zaqi Solutions</h3><span class="badge badge-live">Founder</span></div>
                 <p>
-                  The software studio I founded. It sells <strong>Onix</strong>, the WhatsApp AI sales agent, plus voice agents for help desks,
-                  websites and custom software for businesses in Colombia. I build its products and run the infrastructure.
+                  My studio. I sell Onix through it, and I also build voice agents, websites and custom software for businesses in
+                  Colombia.
                 </p>
                 <ul class="chips"><li>Onix SaaS</li><li>AI agents</li><li>Multi-tenant</li><li>WhatsApp Cloud API</li><li>Python</li><li>React</li><li>Docker</li></ul>
                 <div class="card-links"><a href="https://zaqisolutions.com" target="_blank" rel="noopener">zaqisolutions.com <svg class="i-ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></div>
@@ -302,12 +299,12 @@
       <section class="section" id="stack">
         <div class="container">
           <header class="section-head">
-            <h2>What I use to ship.</h2>
+            <h2>Tools I use</h2>
           </header>
           <div class="stack-grid">
             <div class="stack-col">
               <h3>AI &amp; agents</h3>
-              <ul class="chips"><li>LangGraph</li><li>Pipecat / Flows</li><li>Claude API</li><li>Gemini</li><li>DeepSeek</li><li>Tool calling</li><li>Embeddings · pgvector</li><li>Vision</li><li>Deepgram STT</li><li>TTS</li><li>WhatsApp Cloud API</li></ul>
+              <ul class="chips"><li>LangGraph</li><li>Pipecat / Flows</li><li>Claude API</li><li>Gemini</li><li>DeepSeek</li><li>Tool calling</li><li>Embeddings, pgvector</li><li>Vision</li><li>Deepgram STT</li><li>TTS</li><li>WhatsApp Cloud API</li></ul>
             </div>
             <div class="stack-col">
               <h3>Backend</h3>
@@ -337,25 +334,19 @@
       <section class="section section-tint" id="approach">
         <div class="container">
           <header class="section-head">
-            <h2>Principles I learned shipping agents to real users.</h2>
+            <h2>A bit about me</h2>
           </header>
-          <div class="principles">
-            <div class="principle">
-              <h3>The model drafts, the code decides</h3>
-              <p>Facts, totals and state changes go through validated tools and database constraints. The LLM writes the words, not the truth.</p>
-            </div>
-            <div class="principle">
-              <h3>Measure on real conversations</h3>
-              <p>Every turn writes a trace: tools, model, tokens, latency. Redesigns start from production data, not from guesses.</p>
-            </div>
-            <div class="principle">
-              <h3>Tests that run in a second</h3>
-              <p>Decision logic is pure and tested without network, database or model calls — so it runs on every commit.</p>
-            </div>
-            <div class="principle">
-              <h3>Own it end to end</h3>
-              <p>From the schema to the Nginx config to the 2 a.m. fix. I've built platforms solo and kept them running for real users.</p>
-            </div>
+          <div class="about">
+            <p>
+              Before I wrote code, I taught English at SENA for four and a half years. Then I worked in customer service and
+              tech support. I started Lingolandias in 2023 as my first real project, and I finished the Henry full-stack bootcamp
+              in 2024 while working.
+            </p>
+            <p>
+              Teaching and support still show up in my work. I spend a lot of time on how the agents talk, because I've been the
+              person on the other end of the line. I also like owning the whole thing: the database, the server, the bot and the
+              late-night fix when something breaks.
+            </p>
           </div>
         </div>
       </section>
@@ -364,8 +355,8 @@
       <section class="section" id="contact">
         <div class="container contact-grid">
           <div class="contact-info">
-            <h2>Let's build something that works in production.</h2>
-            <p>Open to full-time remote roles and freelance projects — especially AI agents, conversational products and full-stack platforms.</p>
+            <h2>Get in touch</h2>
+            <p>I'm looking for a full-time remote role, and I also take freelance projects. You can write to me in English or Spanish.</p>
             <a class="contact-mail" href="mailto:koatth60@gmail.com">koatth60@gmail.com</a>
             <ul class="socials">
               <li><a href="https://github.com/koatth60" target="_blank" rel="noopener" aria-label="GitHub">
@@ -399,7 +390,7 @@
 
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>© <span id="year">2026</span> Carlos Mendoza · Bogotá, Colombia</p>
+        <p>© <span id="year">2026</span> Carlos Mendoza. Bogotá, Colombia.</p>
         <a href="#top">Back to top</a>
       </div>
     </footer>
